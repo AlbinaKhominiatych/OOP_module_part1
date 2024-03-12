@@ -1,7 +1,6 @@
-# Завдання 1
-# Створіть клас Student з атрибутами name та age.
-# Додайте метод print_info, який виведе інформацію про
-# студента у на вигляді "Ім'я: {name}, Вік: {age}".
+# Завдання 2
+# Створіть клас Circle з атрибутом radius та методом
+# area, який поверне площу кола з вказаним радіусом.
 
 
 class Student:
@@ -10,8 +9,8 @@ class Student:
         self.age = age
 
     def print_info(self):
-        print(f"Ім'я студента - {self.name} та його вік {self.age}")
+        return f"Ім'я студента - {self.name} та його вік {self.age}"
 
 
 student1 = Student("Іван", 20)
-student1.print_info()
+print(student1.print_info())
