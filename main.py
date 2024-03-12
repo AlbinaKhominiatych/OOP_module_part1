@@ -1,17 +1,54 @@
-# Завдання 1
-# Створіть клас Student з атрибутами name та age.
-# Додайте метод print_info, який виведе інформацію про
-# студента у на вигляді "Ім'я: {name}, Вік: {age}".
+# Створіть клас «Дріб». Збережіть у класі
+# чисельник та знаменник. Реалізуйте методи класу для
+# введення-виведення даних. Також створіть методи
+# класу для виконання арифметичних операцій
+# (додавання, віднімання, множення, ділення і т. д.).
+
+class Fraction:
+    def __init__(self, numerator, denominator):
+        self.numerator = numerator
+        self.denominator = denominator
+
+    def display_fraction(self):
+        print(f"{self.numerator}/{self.denominator}")
+
+    def add(self, other_fraction):
+        result_numerator = self.numerator * other_fraction.denominator + other_fraction.numerator * self.denominator
+        result_denominator = self.denominator * other_fraction.denominator
+        return Fraction(result_numerator, result_denominator)
+
+    def subtract(self, other_fraction):
+        result_numerator = self.numerator * other_fraction.denominator - other_fraction.numerator * self.denominator
+        result_denominator = self.denominator * other_fraction.denominator
+        return Fraction(result_numerator, result_denominator)
+
+    def multiply(self, other_fraction):
+        result_numerator = self.numerator * other_fraction.numerator
+        result_denominator = self.denominator * other_fraction.denominator
+        return Fraction(result_numerator, result_denominator)
+
+    def divide(self, other_fraction):
+        result_numerator = self.numerator * other_fraction.denominator
+        result_denominator = self.denominator * other_fraction.numerator
+        return Fraction(result_numerator, result_denominator)
 
 
-class Student:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+fraction1 = Fraction(1, 2)
+fraction2 = Fraction(2, 4)
 
-    def print_info(self):
-        print(f"Ім'я студента - {self.name} та його вік {self.age}")
+fraction1.display_fraction()
+fraction2.display_fraction()
+
+result_addition = fraction1.add(fraction2)
+result_addition.display_fraction()
+
+result_addition = fraction1.subtract(fraction2)
+result_addition.display_fraction()
+
+result_addition = fraction1.multiply(fraction2)
+result_addition.display_fraction()
+
+result_addition = fraction1.divide(fraction2)
+result_addition.display_fraction()
 
 
-student1 = Student("Іван", 20)
-student1.print_info()
